@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RARegistroVC : UIViewController 
+@interface RARegistroVC : UIViewController {
+    int aulaSeleccionada;
+}
 
 @end

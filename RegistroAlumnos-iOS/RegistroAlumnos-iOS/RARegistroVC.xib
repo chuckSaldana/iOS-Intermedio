@@ -9,7 +9,6 @@
                 <outlet property="aulaPicker" destination="j1E-fF-BFt" id="x5O-Jw-rfH"/>
                 <outlet property="matriculaTxt" destination="C0t-Zk-YDC" id="MqE-Sz-Kd2"/>
                 <outlet property="nombreTxt" destination="7i9-Xv-nyd" id="bOy-hi-gy9"/>
-                <outlet property="saveButtonTapped" destination="qum-d0-7JY" id="YpX-bX-CfN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

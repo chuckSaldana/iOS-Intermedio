@@ -56,15 +56,6 @@
     
     // El tabBarController se convierte en el viewController raiz de la aplicación.
     self.window.rootViewController = tabBarController;
-    
-    // Por medio de los userDefaults revisamos si autologin esta habilitado.
-    BOOL isAutoLoginEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto-login-enabled"];
-    if (isAutoLoginEnabled == NO) {
-        // Si esta deshabilitado, manda presentar el ViewController de Login depues de un segundo
-        // para dejar que las animaciones iniciales se realicen eficientemente.
-        [self performSelector:@selector(presentLogin) withObject:nil afterDelay:1];
-    }
-    
     // Haz visible el window y la gerarquia de vistas.
     [self.window makeKeyAndVisible];
     
@@ -72,10 +63,13 @@
 }
 
 - (void)presentLogin {
-    RALoginVC *loginVC = [[RALoginVC alloc] init];
-    loginVC.delegate = self;
     
-    [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
+    if (self.window.rootViewController.presentedViewController == nil) {
+        RALoginVC *loginVC = [[RALoginVC alloc] init];
+        loginVC.delegate = self;
+        
+        [self.window.rootViewController presentViewController:loginVC animated:YES completion:nil];
+    }
 }
 
 - (void)loginVCdidLogin:(RALoginVC *)loginVC {
@@ -85,6 +79,7 @@
 - (void)llenarDatosIniciales {
     RARegistro *registro = [[RADataHelper sharedInstance] registro];
     
+    // Creamos 10 instructores con numeros al final del nombre
     for (int index = 0; index < 10; index ++) {
         NSString *nombre = [NSString stringWithFormat:@"Carlos %i", index];
         NSNumber *matricula = [NSNumber numberWithInt:index];
@@ -95,10 +90,10 @@
         [registro addInstructor:instructor];
     }
     
+    // Asignamos un instructor random a las aulas
     NSArray *instructores = [registro instructores];
-    //int instructorIndex = arc4random()%([instructores count] - 1);
-    int limit = ([instructores count] - 1);
-    int instructorIndex = arc4random_uniform(limit);
+    unsigned long limit = ([instructores count] - 1);
+    int instructorIndex = arc4random_uniform((unsigned int)limit);
     
     RAAula *aula1 = [[RAAula alloc] init];
     aula1.identifier = @1;
@@ -129,6 +124,14 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    // Por medio de los userDefaults revisamos si autologin esta habilitado.
+    BOOL isAutoLoginEnabled = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto-login-enabled"];
+    if (isAutoLoginEnabled == NO) {
+        // Si esta deshabilitado, manda presentar el ViewController de Login depues de un segundo
+        // para dejar que las animaciones iniciales se realicen eficientemente.
+        [self presentLogin];
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

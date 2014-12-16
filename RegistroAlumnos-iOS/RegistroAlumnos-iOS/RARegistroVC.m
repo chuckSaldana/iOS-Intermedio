@@ -7,6 +7,7 @@
 //
 
 #import "RARegistroVC.h"
+#import "RADataHelper.h"
 
 @interface RARegistroVC () <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *nombreTxt;
@@ -39,7 +40,21 @@
 */
 
 - (IBAction)saveButtonTapped:(id)sender {
-
+    
+    NSNumber *matricula = [NSNumber numberWithInt:[self.matriculaTxt.text intValue]];
+    RAAlumno *nuevoAlumno = [[RAAlumno alloc] initWithNombre:self.nombreTxt.text
+                                                   matricula:matricula];
+    [[[RADataHelper sharedInstance] registro] addAlumno:nuevoAlumno];
+    
+    [self.nombreTxt resignFirstResponder];
+    [self.matriculaTxt resignFirstResponder];
+    
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:nuevoAlumno
+                                                         forKey:@"alumno"];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserAdded"
+                                                        object:self
+                                                      userInfo:userInfo];
 }
 
 #pragma mark - UIPickerViewDelegate conformance
@@ -51,7 +66,22 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return 10;
+    
+    NSArray *aulas = [[[RADataHelper sharedInstance] registro] aulas];
+    return [aulas count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component {
+    
+    NSArray *aulas = [[[RADataHelper sharedInstance] registro] aulas];
+    RAAula *aula = [aulas objectAtIndex:row];
+    return [NSString stringWithFormat:@"Aula %@", aula.identifier];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    aulaSeleccionada = (int)row;
 }
 
 @end

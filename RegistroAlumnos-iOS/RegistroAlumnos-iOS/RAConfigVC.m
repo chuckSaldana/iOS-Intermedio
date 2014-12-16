@@ -7,8 +7,11 @@
 //
 
 #import "RAConfigVC.h"
+#import "RASwitch.h"
 
 @interface RAConfigVC ()
+
+@property (weak, nonatomic) IBOutlet UILabel *autoLbl;
 
 @end
 
@@ -17,6 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    BOOL state = [[NSUserDefaults standardUserDefaults] boolForKey:@"auto-login-enabled"];
+    RASwitch *raSwitch = [[RASwitch alloc] initWithColor:[UIColor redColor]
+                                                   state:state];
+    raSwitch.frame = CGRectMake(CGRectGetMaxX(self.autoLbl.frame) + 10,
+                                    CGRectGetMinY(self.autoLbl.frame), 100, 50);
+    [raSwitch addTarget:self action:@selector(switchTapped:)];
+    [self.view addSubview:raSwitch];
+}
+
+- (void)switchTapped:(RASwitch *)raSwitch {
+    [[NSUserDefaults standardUserDefaults] setBool:raSwitch.currentState
+                                            forKey:@"auto-login-enabled"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)didReceiveMemoryWarning {

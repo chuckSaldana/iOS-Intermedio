@@ -27,6 +27,9 @@
 		6E1CD0241A3F6265008B54A4 /* RAAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0221A3F6265008B54A4 /* RAAboutVC.m */; };
 		6E1CD0251A3F6265008B54A4 /* RAAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */; };
 		6E1CD0281A3F7C81008B54A4 /* RADataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */; };
+		6E7A37F81A40B33E0039B07F /* RADetailleAlumno.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A37F61A40B33E0039B07F /* RADetailleAlumno.m */; };
+		6E7A37F91A40B33E0039B07F /* RADetailleAlumno.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E7A37F71A40B33E0039B07F /* RADetailleAlumno.xib */; };
+		6E7A37FD1A40C5670039B07F /* RASwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A37FC1A40C5670039B07F /* RASwitch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,11 @@
 		6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAAboutVC.xib; sourceTree = "<group>"; };
 		6E1CD0261A3F7C81008B54A4 /* RADataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataHelper.h; sourceTree = "<group>"; };
 		6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataHelper.m; sourceTree = "<group>"; };
+		6E7A37F51A40B33E0039B07F /* RADetailleAlumno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADetailleAlumno.h; sourceTree = "<group>"; };
+		6E7A37F61A40B33E0039B07F /* RADetailleAlumno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADetailleAlumno.m; sourceTree = "<group>"; };
+		6E7A37F71A40B33E0039B07F /* RADetailleAlumno.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RADetailleAlumno.xib; sourceTree = "<group>"; };
+		6E7A37FB1A40C5670039B07F /* RASwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RASwitch.h; sourceTree = "<group>"; };
+		6E7A37FC1A40C5670039B07F /* RASwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RASwitch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 		6E1CCFD81A3F5328008B54A4 /* RegistroAlumnos-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				6E7A37FA1A40C5240039B07F /* Views */,
 				6E1CD0051A3F572E008B54A4 /* Model */,
 				6E1CCFDD1A3F5328008B54A4 /* AppDelegate.h */,
 				6E1CCFDE1A3F5328008B54A4 /* AppDelegate.m */,
@@ -171,6 +180,9 @@
 				6E1CD0211A3F6265008B54A4 /* RAAboutVC.h */,
 				6E1CD0221A3F6265008B54A4 /* RAAboutVC.m */,
 				6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */,
+				6E7A37F51A40B33E0039B07F /* RADetailleAlumno.h */,
+				6E7A37F61A40B33E0039B07F /* RADetailleAlumno.m */,
+				6E7A37F71A40B33E0039B07F /* RADetailleAlumno.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +202,15 @@
 				6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6E7A37FA1A40C5240039B07F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6E7A37FB1A40C5670039B07F /* RASwitch.h */,
+				6E7A37FC1A40C5670039B07F /* RASwitch.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7A37F91A40B33E0039B07F /* RADetailleAlumno.xib in Resources */,
 				6E1CCFEA1A3F5328008B54A4 /* LaunchScreen.xib in Resources */,
 				6E1CD0161A3F620C008B54A4 /* RARegistroVC.xib in Resources */,
 				6E1CD0201A3F6250008B54A4 /* RAConfigVC.xib in Resources */,
@@ -297,10 +319,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E1CD0241A3F6265008B54A4 /* RAAboutVC.m in Sources */,
+				6E7A37F81A40B33E0039B07F /* RADetailleAlumno.m in Sources */,
 				6E1CD0111A3F574B008B54A4 /* RARegistro.m in Sources */,
 				6E1CD00F1A3F574B008B54A4 /* RAAula.m in Sources */,
 				6E1CCFDF1A3F5328008B54A4 /* AppDelegate.m in Sources */,
 				6E1CD0281A3F7C81008B54A4 /* RADataHelper.m in Sources */,
+				6E7A37FD1A40C5670039B07F /* RASwitch.m in Sources */,
 				6E1CD01F1A3F6250008B54A4 /* RAConfigVC.m in Sources */,
 				6E1CD0101A3F574B008B54A4 /* RAInstructor.m in Sources */,
 				6E1CD01A1A3F622E008B54A4 /* RAListasVC.m in Sources */,
@@ -490,6 +514,7 @@
 				6E1CCFFB1A3F5329008B54A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E1CCFFC1A3F5329008B54A4 /* Build configuration list for PBXNativeTarget "RegistroAlumnos-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +523,7 @@
 				6E1CCFFE1A3F5329008B54A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
