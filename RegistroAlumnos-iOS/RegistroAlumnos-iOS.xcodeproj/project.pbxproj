@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6E1CCFDC1A3F5328008B54A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CCFDB1A3F5328008B54A4 /* main.m */; };
+		6E1CCFDF1A3F5328008B54A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CCFDE1A3F5328008B54A4 /* AppDelegate.m */; };
+		6E1CCFE71A3F5328008B54A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CCFE61A3F5328008B54A4 /* Images.xcassets */; };
+		6E1CCFEA1A3F5328008B54A4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CCFE81A3F5328008B54A4 /* LaunchScreen.xib */; };
+		6E1CCFF61A3F5329008B54A4 /* RegistroAlumnos_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CCFF51A3F5329008B54A4 /* RegistroAlumnos_iOSTests.m */; };
+		6E1CD0021A3F5712008B54A4 /* RALoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0001A3F5712008B54A4 /* RALoginVC.m */; };
+		6E1CD0031A3F5712008B54A4 /* RALoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD0011A3F5712008B54A4 /* RALoginVC.xib */; };
+		6E1CD00E1A3F574B008B54A4 /* RAAlumno.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0071A3F574B008B54A4 /* RAAlumno.m */; };
+		6E1CD00F1A3F574B008B54A4 /* RAAula.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0091A3F574B008B54A4 /* RAAula.m */; };
+		6E1CD0101A3F574B008B54A4 /* RAInstructor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD00B1A3F574B008B54A4 /* RAInstructor.m */; };
+		6E1CD0111A3F574B008B54A4 /* RARegistro.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD00D1A3F574B008B54A4 /* RARegistro.m */; };
+		6E1CD0151A3F620C008B54A4 /* RARegistroVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0131A3F620C008B54A4 /* RARegistroVC.m */; };
+		6E1CD0161A3F620C008B54A4 /* RARegistroVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD0141A3F620C008B54A4 /* RARegistroVC.xib */; };
+		6E1CD01A1A3F622E008B54A4 /* RAListasVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0181A3F622E008B54A4 /* RAListasVC.m */; };
+		6E1CD01B1A3F622E008B54A4 /* RAListasVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD0191A3F622E008B54A4 /* RAListasVC.xib */; };
+		6E1CD01F1A3F6250008B54A4 /* RAConfigVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD01D1A3F6250008B54A4 /* RAConfigVC.m */; };
+		6E1CD0201A3F6250008B54A4 /* RAConfigVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD01E1A3F6250008B54A4 /* RAConfigVC.xib */; };
+		6E1CD0241A3F6265008B54A4 /* RAAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0221A3F6265008B54A4 /* RAAboutVC.m */; };
+		6E1CD0251A3F6265008B54A4 /* RAAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */; };
+		6E1CD0281A3F7C81008B54A4 /* RADataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6E1CCFF01A3F5329008B54A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E1CCFCE1A3F5328008B54A4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E1CCFD51A3F5328008B54A4;
+			remoteInfo = "RegistroAlumnos-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6E1CCFD61A3F5328008B54A4 /* RegistroAlumnos-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RegistroAlumnos-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1CCFDA1A3F5328008B54A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1CCFDB1A3F5328008B54A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6E1CCFDD1A3F5328008B54A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6E1CCFDE1A3F5328008B54A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6E1CCFE61A3F5328008B54A4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6E1CCFE91A3F5328008B54A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6E1CCFEF1A3F5329008B54A4 /* RegistroAlumnos-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RegistroAlumnos-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E1CCFF41A3F5329008B54A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E1CCFF51A3F5329008B54A4 /* RegistroAlumnos_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistroAlumnos_iOSTests.m; sourceTree = "<group>"; };
+		6E1CCFFF1A3F5712008B54A4 /* RALoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALoginVC.h; sourceTree = "<group>"; };
+		6E1CD0001A3F5712008B54A4 /* RALoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALoginVC.m; sourceTree = "<group>"; };
+		6E1CD0011A3F5712008B54A4 /* RALoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RALoginVC.xib; sourceTree = "<group>"; };
+		6E1CD0061A3F574B008B54A4 /* RAAlumno.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAAlumno.h; sourceTree = "<group>"; };
+		6E1CD0071A3F574B008B54A4 /* RAAlumno.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAAlumno.m; sourceTree = "<group>"; };
+		6E1CD0081A3F574B008B54A4 /* RAAula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAAula.h; sourceTree = "<group>"; };
+		6E1CD0091A3F574B008B54A4 /* RAAula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAAula.m; sourceTree = "<group>"; };
+		6E1CD00A1A3F574B008B54A4 /* RAInstructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAInstructor.h; sourceTree = "<group>"; };
+		6E1CD00B1A3F574B008B54A4 /* RAInstructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAInstructor.m; sourceTree = "<group>"; };
+		6E1CD00C1A3F574B008B54A4 /* RARegistro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RARegistro.h; sourceTree = "<group>"; };
+		6E1CD00D1A3F574B008B54A4 /* RARegistro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARegistro.m; sourceTree = "<group>"; };
+		6E1CD0121A3F620C008B54A4 /* RARegistroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RARegistroVC.h; sourceTree = "<group>"; };
+		6E1CD0131A3F620C008B54A4 /* RARegistroVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RARegistroVC.m; sourceTree = "<group>"; };
+		6E1CD0141A3F620C008B54A4 /* RARegistroVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RARegistroVC.xib; sourceTree = "<group>"; };
+		6E1CD0171A3F622E008B54A4 /* RAListasVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAListasVC.h; sourceTree = "<group>"; };
+		6E1CD0181A3F622E008B54A4 /* RAListasVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAListasVC.m; sourceTree = "<group>"; };
+		6E1CD0191A3F622E008B54A4 /* RAListasVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAListasVC.xib; sourceTree = "<group>"; };
+		6E1CD01C1A3F6250008B54A4 /* RAConfigVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAConfigVC.h; sourceTree = "<group>"; };
+		6E1CD01D1A3F6250008B54A4 /* RAConfigVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAConfigVC.m; sourceTree = "<group>"; };
+		6E1CD01E1A3F6250008B54A4 /* RAConfigVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAConfigVC.xib; sourceTree = "<group>"; };
+		6E1CD0211A3F6265008B54A4 /* RAAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAAboutVC.h; sourceTree = "<group>"; };
+		6E1CD0221A3F6265008B54A4 /* RAAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAAboutVC.m; sourceTree = "<group>"; };
+		6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAAboutVC.xib; sourceTree = "<group>"; };
+		6E1CD0261A3F7C81008B54A4 /* RADataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataHelper.h; sourceTree = "<group>"; };
+		6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataHelper.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6E1CCFD31A3F5328008B54A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1CCFEC1A3F5329008B54A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6E1CCFCD1A3F5328008B54A4 = {
+			isa = PBXGroup;
+			children = (
+				6E1CCFD81A3F5328008B54A4 /* RegistroAlumnos-iOS */,
+				6E1CCFF21A3F5329008B54A4 /* RegistroAlumnos-iOSTests */,
+				6E1CCFD71A3F5328008B54A4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E1CCFD71A3F5328008B54A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CCFD61A3F5328008B54A4 /* RegistroAlumnos-iOS.app */,
+				6E1CCFEF1A3F5329008B54A4 /* RegistroAlumnos-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6E1CCFD81A3F5328008B54A4 /* RegistroAlumnos-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CD0051A3F572E008B54A4 /* Model */,
+				6E1CCFDD1A3F5328008B54A4 /* AppDelegate.h */,
+				6E1CCFDE1A3F5328008B54A4 /* AppDelegate.m */,
+				6E1CCFE61A3F5328008B54A4 /* Images.xcassets */,
+				6E1CCFE81A3F5328008B54A4 /* LaunchScreen.xib */,
+				6E1CCFD91A3F5328008B54A4 /* Supporting Files */,
+				6E1CD0041A3F571F008B54A4 /* ViewControllers */,
+			);
+			path = "RegistroAlumnos-iOS";
+			sourceTree = "<group>";
+		};
+		6E1CCFD91A3F5328008B54A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CCFDA1A3F5328008B54A4 /* Info.plist */,
+				6E1CCFDB1A3F5328008B54A4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E1CCFF21A3F5329008B54A4 /* RegistroAlumnos-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CCFF51A3F5329008B54A4 /* RegistroAlumnos_iOSTests.m */,
+				6E1CCFF31A3F5329008B54A4 /* Supporting Files */,
+			);
+			path = "RegistroAlumnos-iOSTests";
+			sourceTree = "<group>";
+		};
+		6E1CCFF31A3F5329008B54A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CCFF41A3F5329008B54A4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E1CD0041A3F571F008B54A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CD0121A3F620C008B54A4 /* RARegistroVC.h */,
+				6E1CD0131A3F620C008B54A4 /* RARegistroVC.m */,
+				6E1CD0141A3F620C008B54A4 /* RARegistroVC.xib */,
+				6E1CD0171A3F622E008B54A4 /* RAListasVC.h */,
+				6E1CD0181A3F622E008B54A4 /* RAListasVC.m */,
+				6E1CD0191A3F622E008B54A4 /* RAListasVC.xib */,
+				6E1CCFFF1A3F5712008B54A4 /* RALoginVC.h */,
+				6E1CD0001A3F5712008B54A4 /* RALoginVC.m */,
+				6E1CD0011A3F5712008B54A4 /* RALoginVC.xib */,
+				6E1CD01C1A3F6250008B54A4 /* RAConfigVC.h */,
+				6E1CD01D1A3F6250008B54A4 /* RAConfigVC.m */,
+				6E1CD01E1A3F6250008B54A4 /* RAConfigVC.xib */,
+				6E1CD0211A3F6265008B54A4 /* RAAboutVC.h */,
+				6E1CD0221A3F6265008B54A4 /* RAAboutVC.m */,
+				6E1CD0231A3F6265008B54A4 /* RAAboutVC.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6E1CD0051A3F572E008B54A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E1CD0061A3F574B008B54A4 /* RAAlumno.h */,
+				6E1CD0071A3F574B008B54A4 /* RAAlumno.m */,
+				6E1CD0081A3F574B008B54A4 /* RAAula.h */,
+				6E1CD0091A3F574B008B54A4 /* RAAula.m */,
+				6E1CD00A1A3F574B008B54A4 /* RAInstructor.h */,
+				6E1CD00B1A3F574B008B54A4 /* RAInstructor.m */,
+				6E1CD00C1A3F574B008B54A4 /* RARegistro.h */,
+				6E1CD00D1A3F574B008B54A4 /* RARegistro.m */,
+				6E1CD0261A3F7C81008B54A4 /* RADataHelper.h */,
+				6E1CD0271A3F7C81008B54A4 /* RADataHelper.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6E1CCFD51A3F5328008B54A4 /* RegistroAlumnos-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E1CCFF91A3F5329008B54A4 /* Build configuration list for PBXNativeTarget "RegistroAlumnos-iOS" */;
+			buildPhases = (
+				6E1CCFD21A3F5328008B54A4 /* Sources */,
+				6E1CCFD31A3F5328008B54A4 /* Frameworks */,
+				6E1CCFD41A3F5328008B54A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RegistroAlumnos-iOS";
+			productName = "RegistroAlumnos-iOS";
+			productReference = 6E1CCFD61A3F5328008B54A4 /* RegistroAlumnos-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6E1CCFEE1A3F5329008B54A4 /* RegistroAlumnos-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E1CCFFC1A3F5329008B54A4 /* Build configuration list for PBXNativeTarget "RegistroAlumnos-iOSTests" */;
+			buildPhases = (
+				6E1CCFEB1A3F5329008B54A4 /* Sources */,
+				6E1CCFEC1A3F5329008B54A4 /* Frameworks */,
+				6E1CCFED1A3F5329008B54A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E1CCFF11A3F5329008B54A4 /* PBXTargetDependency */,
+			);
+			name = "RegistroAlumnos-iOSTests";
+			productName = "RegistroAlumnos-iOSTests";
+			productReference = 6E1CCFEF1A3F5329008B54A4 /* RegistroAlumnos-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6E1CCFCE1A3F5328008B54A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Jaguar Labs";
+				TargetAttributes = {
+					6E1CCFD51A3F5328008B54A4 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					6E1CCFEE1A3F5329008B54A4 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 6E1CCFD51A3F5328008B54A4;
+					};
+				};
+			};
+			buildConfigurationList = 6E1CCFD11A3F5328008B54A4 /* Build configuration list for PBXProject "RegistroAlumnos-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6E1CCFCD1A3F5328008B54A4;
+			productRefGroup = 6E1CCFD71A3F5328008B54A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6E1CCFD51A3F5328008B54A4 /* RegistroAlumnos-iOS */,
+				6E1CCFEE1A3F5329008B54A4 /* RegistroAlumnos-iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6E1CCFD41A3F5328008B54A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1CCFEA1A3F5328008B54A4 /* LaunchScreen.xib in Resources */,
+				6E1CD0161A3F620C008B54A4 /* RARegistroVC.xib in Resources */,
+				6E1CD0201A3F6250008B54A4 /* RAConfigVC.xib in Resources */,
+				6E1CCFE71A3F5328008B54A4 /* Images.xcassets in Resources */,
+				6E1CD0251A3F6265008B54A4 /* RAAboutVC.xib in Resources */,
+				6E1CD0031A3F5712008B54A4 /* RALoginVC.xib in Resources */,
+				6E1CD01B1A3F622E008B54A4 /* RAListasVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1CCFED1A3F5329008B54A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6E1CCFD21A3F5328008B54A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1CD0241A3F6265008B54A4 /* RAAboutVC.m in Sources */,
+				6E1CD0111A3F574B008B54A4 /* RARegistro.m in Sources */,
+				6E1CD00F1A3F574B008B54A4 /* RAAula.m in Sources */,
+				6E1CCFDF1A3F5328008B54A4 /* AppDelegate.m in Sources */,
+				6E1CD0281A3F7C81008B54A4 /* RADataHelper.m in Sources */,
+				6E1CD01F1A3F6250008B54A4 /* RAConfigVC.m in Sources */,
+				6E1CD0101A3F574B008B54A4 /* RAInstructor.m in Sources */,
+				6E1CD01A1A3F622E008B54A4 /* RAListasVC.m in Sources */,
+				6E1CCFDC1A3F5328008B54A4 /* main.m in Sources */,
+				6E1CD0151A3F620C008B54A4 /* RARegistroVC.m in Sources */,
+				6E1CD0021A3F5712008B54A4 /* RALoginVC.m in Sources */,
+				6E1CD00E1A3F574B008B54A4 /* RAAlumno.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E1CCFEB1A3F5329008B54A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E1CCFF61A3F5329008B54A4 /* RegistroAlumnos_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6E1CCFF11A3F5329008B54A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E1CCFD51A3F5328008B54A4 /* RegistroAlumnos-iOS */;
+			targetProxy = 6E1CCFF01A3F5329008B54A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6E1CCFE81A3F5328008B54A4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6E1CCFE91A3F5328008B54A4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6E1CCFF71A3F5329008B54A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6E1CCFF81A3F5329008B54A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6E1CCFFA1A3F5329008B54A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "RegistroAlumnos-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6E1CCFFB1A3F5329008B54A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "RegistroAlumnos-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6E1CCFFD1A3F5329008B54A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RegistroAlumnos-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RegistroAlumnos-iOS.app/RegistroAlumnos-iOS";
+			};
+			name = Debug;
+		};
+		6E1CCFFE1A3F5329008B54A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RegistroAlumnos-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RegistroAlumnos-iOS.app/RegistroAlumnos-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6E1CCFD11A3F5328008B54A4 /* Build configuration list for PBXProject "RegistroAlumnos-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1CCFF71A3F5329008B54A4 /* Debug */,
+				6E1CCFF81A3F5329008B54A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6E1CCFF91A3F5329008B54A4 /* Build configuration list for PBXNativeTarget "RegistroAlumnos-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1CCFFA1A3F5329008B54A4 /* Debug */,
+				6E1CCFFB1A3F5329008B54A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E1CCFFC1A3F5329008B54A4 /* Build configuration list for PBXNativeTarget "RegistroAlumnos-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E1CCFFD1A3F5329008B54A4 /* Debug */,
+				6E1CCFFE1A3F5329008B54A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6E1CCFCE1A3F5328008B54A4 /* Project object */;
+}
