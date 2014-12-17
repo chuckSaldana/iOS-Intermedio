@@ -8,6 +8,7 @@
 
 #import "RAConfigVC.h"
 #import "RASwitch.h"
+#import "RADrawingBoard.h"
 
 @interface RAConfigVC ()
 
@@ -28,6 +29,13 @@
                                     CGRectGetMinY(self.autoLbl.frame), 100, 50);
     [raSwitch addTarget:self action:@selector(switchTapped:)];
     [self.view addSubview:raSwitch];
+    
+    CGRect boardFrame = CGRectMake(CGRectGetMinX(self.autoLbl.frame),
+                                   CGRectGetMaxY(self.autoLbl.frame),
+                                   CGRectGetWidth(self.view.frame) - 20,
+                                   400);
+    RADrawingBoard *board = [[RADrawingBoard alloc] initWithFrame:boardFrame];
+    [self.view addSubview:board];
 }
 
 - (void)switchTapped:(RASwitch *)raSwitch {

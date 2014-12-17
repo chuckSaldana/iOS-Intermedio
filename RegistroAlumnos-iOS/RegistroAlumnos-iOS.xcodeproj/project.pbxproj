@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0A8E251A41D29C005CCCF7 /* RADrawingBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A8E241A41D29C005CCCF7 /* RADrawingBoard.m */; };
 		6E1CCFDC1A3F5328008B54A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CCFDB1A3F5328008B54A4 /* main.m */; };
 		6E1CCFDF1A3F5328008B54A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1CCFDE1A3F5328008B54A4 /* AppDelegate.m */; };
 		6E1CCFE71A3F5328008B54A4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E1CCFE61A3F5328008B54A4 /* Images.xcassets */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0A8E231A41D29C005CCCF7 /* RADrawingBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADrawingBoard.h; sourceTree = "<group>"; };
+		6E0A8E241A41D29C005CCCF7 /* RADrawingBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADrawingBoard.m; sourceTree = "<group>"; };
 		6E1CCFD61A3F5328008B54A4 /* RegistroAlumnos-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RegistroAlumnos-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E1CCFDA1A3F5328008B54A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E1CCFDB1A3F5328008B54A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 			children = (
 				6E7A37FB1A40C5670039B07F /* RASwitch.h */,
 				6E7A37FC1A40C5670039B07F /* RASwitch.m */,
+				6E0A8E231A41D29C005CCCF7 /* RADrawingBoard.h */,
+				6E0A8E241A41D29C005CCCF7 /* RADrawingBoard.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E0A8E251A41D29C005CCCF7 /* RADrawingBoard.m in Sources */,
 				6E1CD0241A3F6265008B54A4 /* RAAboutVC.m in Sources */,
 				6E7A37F81A40B33E0039B07F /* RADetailleAlumno.m in Sources */,
 				6E1CD0111A3F574B008B54A4 /* RARegistro.m in Sources */,
