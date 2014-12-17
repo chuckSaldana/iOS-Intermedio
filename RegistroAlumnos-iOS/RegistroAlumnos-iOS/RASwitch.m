@@ -36,6 +36,7 @@
     UILabel *offLbl = [[UILabel alloc] initWithFrame:self.vistaIzquierda.bounds];
     offLbl.textColor = [UIColor whiteColor];
     offLbl.text = @"OFF";
+    offLbl.font = [UIFont systemFontOfSize:12];
     offLbl.textAlignment = NSTextAlignmentCenter;
     [self.vistaIzquierda addSubview:offLbl];
     
