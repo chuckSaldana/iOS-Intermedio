@@ -58,8 +58,28 @@
     self.window.rootViewController = tabBarController;
     // Haz visible el window y la gerarquia de vistas.
     [self.window makeKeyAndVisible];
+    [self showNotification];
     
     return YES;
+}
+
+- (void)showNotification {
+    
+//    if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateBackground) {
+        //  Notify user of zone entry.  This event fires even if app is inactive
+        UIApplication* app = [UIApplication sharedApplication];
+        UILocalNotification* notifyAlarm = [[UILocalNotification alloc] init];
+        if (notifyAlarm) {
+            notifyAlarm.repeatInterval = 0;
+            notifyAlarm.soundName = UILocalNotificationDefaultSoundName;
+            NSString *alertText = @"Do you want to see more?";
+            notifyAlarm.alertBody = alertText;
+            notifyAlarm.userInfo = @{@"location":@""};
+            //[app presentLocalNotificationNow:notifyAlarm];
+            notifyAlarm.fireDate = [NSDate dateWithTimeIntervalSinceNow:10];
+            [app scheduleLocalNotification:notifyAlarm];
+        }
+    //}
 }
 
 - (void)presentLogin {
@@ -106,6 +126,15 @@
     
     [registro addAula:aula1];
     [registro addAula:aula2];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    // Recuperar user info
+    
+    // Presentar contenido relacionado
+//    [self.window.rootViewController presentViewController:<#(UIViewController *)#>
+//                                                 animated:<#(BOOL)#>
+//                                               completion:<#^(void)completion#>]
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

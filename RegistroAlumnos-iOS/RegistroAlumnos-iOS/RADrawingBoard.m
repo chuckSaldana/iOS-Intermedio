@@ -22,22 +22,12 @@
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     [self addRectangleAtPoint:point];
-    NSLog(@"began touches %@", touches);
-//    for (UITouch *touch in [touches allObjects]) {
-//        CGPoint point = [touch locationInView:self];
-//        [self addRectangleAtPoint:point];
-//    }
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint point = [touch locationInView:self];
     [self addRectangleAtPoint:point];
-    NSLog(@"began touches %@", touches);
-//    for (UITouch *touch in [touches allObjects]) {
-//        CGPoint point = [touch locationInView:self];
-//        [self addRectangleAtPoint:point];
-//    }
 }
 
 - (void)addRectangleAtPoint:(CGPoint)point {
