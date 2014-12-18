@@ -8,12 +8,18 @@
 
 #import "ViewController.h"
 #import "YCQuery.h"
+#import "Query.h"
+#import "AppDelegate.h"
+#import "YCLocationHelper.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *queries;
 @property (weak, nonatomic) IBOutlet  UITextField *queryTxt;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) YCLocationHelper *locationHelper;
 
 @end
 
@@ -23,7 +29,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.queries = [NSMutableArray array];
+    self.context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
     
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Query"];
+    NSError *error;
+    self.queries = [[self.context executeFetchRequest:fetchRequest error:&error] mutableCopy];
+    [self.tableView reloadData];
+    
+    self.locationHelper = [[YCLocationHelper alloc] init];
+    [self.locationHelper startGettingLocation];
 }
 
 - (IBAction)queryButtonTapped:(id)sender {
@@ -38,14 +52,26 @@
 
 - (void)downloadData {
     @autoreleasepool {
+      //======================================================================
+        NSEntityDescription *description = [NSEntityDescription entityForName:@"Query"
+                                                       inManagedObjectContext:self.context];
+        Query *cdQuery = [[Query alloc] initWithEntity:description
+                        insertIntoManagedObjectContext:self.context];
+        cdQuery.woeid = self.queryTxt.text;
+      //======================================================================
+        
         
         __block YCQuery *query = [[YCQuery alloc] init];
         query.woeid = self.queryTxt.text;
         
         NSString *urlStr = [NSString stringWithFormat:@"https://query.yahooapis.com/v1/public/yql?q=select+item.condition+from+weather.forecast+where+woeid+%%3D%@&format=json&env=store%%3A%%2F%%2Fdatatables.org%%2Falltableswithkeys", query.woeid];
         //https://query.yahooapis.com/v1/public/yql?q=select+item.condition+from+weather.forecast+where+woeid+%3D151582&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
+        //http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%2237.416275%2C-122.025092%22%20and%20gflags%3D%22R%22&format=json
         
         NSURL *url = [NSURL URLWithString:urlStr];
+      //======================================================================
+        cdQuery.url = [url absoluteString];
+      //======================================================================
         query.url = url;
         
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -95,9 +121,15 @@
                 NSDictionary *item = channel[@"item"];
                 NSDictionary *condition = item[@"condition"];
                 NSString *text = condition[@"text"];
-                
+      //======================================================================
+                cdQuery.text = text;
+                [(AppDelegate *)[[UIApplication sharedApplication] delegate] saveContext];
+      //======================================================================
                 query.text = text;
-                [self.queries addObject:query];
+                //[self.queries addObject:query];
+      //======================================================================
+                [self.queries addObject:cdQuery];
+      //======================================================================
                 [self performSelectorOnMainThread:@selector(downloadFinished:)
                                        withObject:query
                                     waitUntilDone:NO];
@@ -116,18 +148,40 @@
  {
  "query": {
  "count": 1,
- "created": "2014-12-17T17:17:14Z",
+ "created": "2014-12-18T14:40:08Z",
  "lang": "en-us",
  "results": {
- "channel": {
- "item": {
- "condition": {
- "code": "30",
- "date": "Wed, 17 Dec 2014 10:47 am CST",
- "temp": "68",
- "text": "Partly Cloudy"
- }
- }
+ "Result": {
+ "quality": "87",
+ "addressMatchType": "INTERPOLATED",
+ "latitude": "37.416275",
+ "longitude": "-122.025092",
+ "offsetlat": "37.416275",
+ "offsetlon": "-122.025092",
+ "radius": "400",
+ "name": "37.416275,-122.025092",
+ "line1": "1361 N Mathilda Ave",
+ "line2": "Sunnyvale, CA 94089",
+ "line3": null,
+ "line4": "United States",
+ "house": "1361",
+ "street": "N Mathilda Ave",
+ "xstreet": null,
+ "unittype": null,
+ "unit": null,
+ "postal": "94089",
+ "neighborhood": null,
+ "city": "Sunnyvale",
+ "county": "Santa Clara County",
+ "state": "California",
+ "country": "United States",
+ "countrycode": "US",
+ "statecode": "CA",
+ "countycode": null,
+ "uzip": "94089",
+ "hash": "5074F43198101435",
+ "woeid": "12797150",
+ "woetype": "11"
  }
  }
  }
@@ -148,7 +202,7 @@
                                       reuseIdentifier:cellID];
     }
     
-    YCQuery *query = self.queries[indexPath.row];
+    Query *query = self.queries[indexPath.row];
     cell.textLabel.text = query.woeid;
     cell.detailTextLabel.text = query.text;
     
