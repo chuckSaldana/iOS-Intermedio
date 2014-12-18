@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RALoginVC">
@@ -16,18 +17,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mm2-lg-c4G">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mm2-lg-c4G">
                     <rect key="frame" x="8" y="69" width="299" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-wO-epl">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUU-wO-epl">
                     <rect key="frame" x="8" y="107" width="299" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-4E-GWO">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRe-4E-GWO">
                     <rect key="frame" x="189" y="145" width="118" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="118" id="ywD-XP-dyM"/>
+                    </constraints>
                     <state key="normal" title="Login">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -37,6 +41,16 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mm2-lg-c4G" secondAttribute="trailing" constant="13" id="7om-aM-gal"/>
+                <constraint firstItem="mm2-lg-c4G" firstAttribute="trailing" secondItem="oUU-wO-epl" secondAttribute="trailing" id="8qh-gX-Oc6"/>
+                <constraint firstItem="KRe-4E-GWO" firstAttribute="top" secondItem="oUU-wO-epl" secondAttribute="bottom" constant="8" symbolic="YES" id="9sm-lz-HHG"/>
+                <constraint firstItem="oUU-wO-epl" firstAttribute="top" secondItem="mm2-lg-c4G" secondAttribute="bottom" constant="8" symbolic="YES" id="H8g-ti-cjZ"/>
+                <constraint firstItem="oUU-wO-epl" firstAttribute="leading" secondItem="mm2-lg-c4G" secondAttribute="leading" id="Nxy-FE-olq"/>
+                <constraint firstItem="mm2-lg-c4G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="69" id="UjH-GZ-xxP"/>
+                <constraint firstItem="oUU-wO-epl" firstAttribute="trailing" secondItem="KRe-4E-GWO" secondAttribute="trailing" id="wOo-of-0Bx"/>
+                <constraint firstItem="mm2-lg-c4G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="xiC-Lq-twa"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="52" y="295"/>
         </view>

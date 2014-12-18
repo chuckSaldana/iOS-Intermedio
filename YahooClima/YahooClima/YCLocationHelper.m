@@ -49,11 +49,16 @@
      didUpdateLocations:(NSArray *)locations {
     
     CLLocation *location = [locations lastObject];
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetLocation" object:location];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetLocation" object:self userInfo:@{@"location":location}];
+    
+    
     [self getWoeidWithLocation:location];
 }
 
 - (void)getWoeidWithLocation:(CLLocation *)location {
-    
+
     CLLocationCoordinate2D coordinate = location.coordinate;
     
     NSString *urlStr = [NSString stringWithFormat:@"http://query.yahooapis.com/v1/public/yql?q=select%%20*%%20from%%20geo.placefinder%%20where%%20text%%3D%%22%f%%2C%f%%22%%20and%%20gflags%%3D%%22R%%22&format=json", coordinate.latitude, coordinate.longitude];
@@ -68,9 +73,20 @@
                                NSLog(@"Response %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
                                
                                // Extraer WOEID
-                               
-                               // Avisar con NSNotificationCenter
-                               
+                               NSError *jsonError;
+                               NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                                     options:NSJSONReadingAllowFragments
+                                                                                       error:&jsonError];
+                               if (!jsonError) {
+                                   NSDictionary *query = responseDict[@"query"];
+                                   NSDictionary *results = query[@"results"];
+                                   NSDictionary *Result = results[@"Result"];
+                                   NSString *woeid = Result[@"woeid"];
+                                   NSString *city = Result[@"city"];
+                                   
+                                   // Avisar con NSNotificationCenter
+                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"didGetWoeid" object:woeid userInfo:@{@"city":city}];
+                               }
                            }];
 }
 

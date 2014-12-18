@@ -11,6 +11,7 @@
 #import "Query.h"
 #import "AppDelegate.h"
 #import "YCLocationHelper.h"
+#import "YCClimaCell.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -30,19 +31,33 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.queries = [NSMutableArray array];
     self.context = [(AppDelegate *)[[UIApplication sharedApplication] delegate] managedObjectContext];
-    
+ 
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Query"];
     NSError *error;
     self.queries = [[self.context executeFetchRequest:fetchRequest error:&error] mutableCopy];
     [self.tableView reloadData];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didGetWoeidNotification:)
+                                                 name:@"didGetWoeid"
+                                               object:nil];
+    
     self.locationHelper = [[YCLocationHelper alloc] init];
     [self.locationHelper startGettingLocation];
 }
 
+- (void)didGetWoeidNotification:(NSNotification *)notification {
+    NSString *woeid = notification.object;
+    NSString *city = notification.userInfo[@"city"];
+    NSDictionary *info = @{@"woeid" : woeid, @"city" : city};
+    [self performSelectorInBackground:@selector(downloadData:) withObject:info];
+}
+
 - (IBAction)queryButtonTapped:(id)sender {
     [self.queryTxt resignFirstResponder];
-    [self performSelectorInBackground:@selector(downloadData) withObject:nil];
+    NSString *city = @"Zapopan";
+    NSDictionary *info = @{@"woeid" : self.queryTxt.text, @"city" : city};
+    [self performSelectorInBackground:@selector(downloadData:) withObject:info];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,23 +65,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)downloadData {
+- (void)downloadData:(NSDictionary *)info {
     @autoreleasepool {
       //======================================================================
         NSEntityDescription *description = [NSEntityDescription entityForName:@"Query"
                                                        inManagedObjectContext:self.context];
         Query *cdQuery = [[Query alloc] initWithEntity:description
                         insertIntoManagedObjectContext:self.context];
-        cdQuery.woeid = self.queryTxt.text;
+        cdQuery.woeid = info[@"woeid"];
+        cdQuery.city = info[@"city"];
       //======================================================================
         
         
         __block YCQuery *query = [[YCQuery alloc] init];
-        query.woeid = self.queryTxt.text;
+        query.woeid = info[@"woeid"];
         
         NSString *urlStr = [NSString stringWithFormat:@"https://query.yahooapis.com/v1/public/yql?q=select+item.condition+from+weather.forecast+where+woeid+%%3D%@&format=json&env=store%%3A%%2F%%2Fdatatables.org%%2Falltableswithkeys", query.woeid];
-        //https://query.yahooapis.com/v1/public/yql?q=select+item.condition+from+weather.forecast+where+woeid+%3D151582&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
-        //http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%2237.416275%2C-122.025092%22%20and%20gflags%3D%22R%22&format=json
         
         NSURL *url = [NSURL URLWithString:urlStr];
       //======================================================================
@@ -77,33 +91,7 @@
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         [request setURL:url];
         [request setTimeoutInterval:30];
-        
-        //    [NSURLConnection sendAsynchronousRequest:request
-        //                                               queue:[NSOperationQueue mainQueue]
-        //                                   completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        //
-        //                                       NSString *responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        //
-        //                                       NSLog(@"response: %@", responseStr);
-        //                                       NSError *jsonError;
-        //                                       NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-        //
-        //
-        //                                       if (jsonError == nil) {
-        //                                           NSDictionary *queryDict = dataDictionary[@"query"];
-        //                                           NSDictionary *results = queryDict[@"results"];
-        //                                           NSDictionary *channel = results[@"channel"];
-        //                                           NSDictionary *item = channel[@"item"];
-        //                                           NSDictionary *condition = item[@"condition"];
-        //                                           NSString *text = condition[@"text"];
-        //
-        //                                           query.text = text;
-        //                                           [self.queries addObject:query];
-        //                                           [self.tableView reloadData];
-        //                                       }
-        //
-        //                                   }];
-        
+ 
         NSURLResponse *response;
         NSError *syncError;
         NSData *receivedData = [NSURLConnection sendSynchronousRequest:request
@@ -144,49 +132,6 @@
     [self.tableView reloadData];
 }
 
-/*
- {
- "query": {
- "count": 1,
- "created": "2014-12-18T14:40:08Z",
- "lang": "en-us",
- "results": {
- "Result": {
- "quality": "87",
- "addressMatchType": "INTERPOLATED",
- "latitude": "37.416275",
- "longitude": "-122.025092",
- "offsetlat": "37.416275",
- "offsetlon": "-122.025092",
- "radius": "400",
- "name": "37.416275,-122.025092",
- "line1": "1361 N Mathilda Ave",
- "line2": "Sunnyvale, CA 94089",
- "line3": null,
- "line4": "United States",
- "house": "1361",
- "street": "N Mathilda Ave",
- "xstreet": null,
- "unittype": null,
- "unit": null,
- "postal": "94089",
- "neighborhood": null,
- "city": "Sunnyvale",
- "county": "Santa Clara County",
- "state": "California",
- "country": "United States",
- "countrycode": "US",
- "statecode": "CA",
- "countycode": null,
- "uzip": "94089",
- "hash": "5074F43198101435",
- "woeid": "12797150",
- "woetype": "11"
- }
- }
- }
- }
- */
 
 #pragma mark - UITableViewDelegate and DataSource implementation
 
@@ -196,23 +141,48 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellID = @"cellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    YCClimaCell *cell = (YCClimaCell *)[tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:cellID];
+        
+        NSArray *items = [[NSBundle mainBundle] loadNibNamed:@"YCClimaCell"
+                                                       owner:self
+                                                     options:nil];
+        cell = [items lastObject];
     }
     
     Query *query = self.queries[indexPath.row];
-    cell.textLabel.text = query.woeid;
-    cell.detailTextLabel.text = query.text;
+    
+    cell.oweidLbl.text = query.woeid;
+    cell.pronosticoLbl.text = query.text;
+    cell.ciudadLbl.text = query.city;
+    
+    if ([cell.pronosticoLbl.text rangeOfString:@"Sunny"].length > 0) {
+        cell.imagen.image = [UIImage imageNamed:@"sunny"];
+    }
+    else if ([cell.pronosticoLbl.text rangeOfString:@"Cloudy"].length > 0) {
+        cell.imagen.image = [UIImage imageNamed:@"cloudy"];
+    }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 92;
 }
 
 
 //151582
 
 @end
+
+
+
+
+
+
+
+
 
 
 

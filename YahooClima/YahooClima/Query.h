@@ -15,5 +15,6 @@
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSString * text;
 @property (nonatomic, retain) NSString * woeid;
+@property (nonatomic, retain) NSString * city;
 
 @end

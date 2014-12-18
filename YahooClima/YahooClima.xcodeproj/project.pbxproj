@@ -19,6 +19,12 @@
 		6E0A8E631A423CBA005CCCF7 /* Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0A8E621A423CBA005CCCF7 /* Query.m */; };
 		6E1882471A4322E20047A9DB /* YCLocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1882461A4322E20047A9DB /* YCLocationHelper.m */; };
 		6E1882491A4323850047A9DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1882481A4323850047A9DB /* CoreLocation.framework */; };
+		6ED101721A434EEF000FFEE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED101711A434EEF000FFEE6 /* MapKit.framework */; };
+		6ED101751A434F85000FFEE6 /* YCMapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED101741A434F85000FFEE6 /* YCMapVC.m */; };
+		6ED101781A436023000FFEE6 /* YCActivityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED101771A436023000FFEE6 /* YCActivityProvider.m */; };
+		6ED1017A1A43675B000FFEE6 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED101791A43675B000FFEE6 /* Accounts.framework */; };
+		6ED1017D1A438DF8000FFEE6 /* YCClimaCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1017C1A438DF8000FFEE6 /* YCClimaCell.m */; };
+		6ED1017F1A438E6B000FFEE6 /* YCClimaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ED1017E1A438E6B000FFEE6 /* YCClimaCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,15 @@
 		6E1882451A4322E20047A9DB /* YCLocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCLocationHelper.h; sourceTree = "<group>"; };
 		6E1882461A4322E20047A9DB /* YCLocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCLocationHelper.m; sourceTree = "<group>"; };
 		6E1882481A4323850047A9DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6ED101711A434EEF000FFEE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6ED101731A434F85000FFEE6 /* YCMapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCMapVC.h; sourceTree = "<group>"; };
+		6ED101741A434F85000FFEE6 /* YCMapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCMapVC.m; sourceTree = "<group>"; };
+		6ED101761A436023000FFEE6 /* YCActivityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCActivityProvider.h; sourceTree = "<group>"; };
+		6ED101771A436023000FFEE6 /* YCActivityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCActivityProvider.m; sourceTree = "<group>"; };
+		6ED101791A43675B000FFEE6 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		6ED1017B1A438DF8000FFEE6 /* YCClimaCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCClimaCell.h; sourceTree = "<group>"; };
+		6ED1017C1A438DF8000FFEE6 /* YCClimaCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCClimaCell.m; sourceTree = "<group>"; };
+		6ED1017E1A438E6B000FFEE6 /* YCClimaCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YCClimaCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED1017A1A43675B000FFEE6 /* Accounts.framework in Frameworks */,
+				6ED101721A434EEF000FFEE6 /* MapKit.framework in Frameworks */,
 				6E1882491A4323850047A9DB /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,6 +95,8 @@
 		6E0A8E261A41F2C3005CCCF7 = {
 			isa = PBXGroup;
 			children = (
+				6ED101791A43675B000FFEE6 /* Accounts.framework */,
+				6ED101711A434EEF000FFEE6 /* MapKit.framework */,
 				6E1882481A4323850047A9DB /* CoreLocation.framework */,
 				6E0A8E5F1A423AE3005CCCF7 /* libsqlite3.0.dylib */,
 				6E0A8E311A41F2C4005CCCF7 /* YahooClima */,
@@ -110,6 +129,11 @@
 				6E0A8E611A423CBA005CCCF7 /* Query.h */,
 				6E0A8E621A423CBA005CCCF7 /* Query.m */,
 				6E0A8E321A41F2C4005CCCF7 /* Supporting Files */,
+				6ED101731A434F85000FFEE6 /* YCMapVC.h */,
+				6ED101741A434F85000FFEE6 /* YCMapVC.m */,
+				6ED1017B1A438DF8000FFEE6 /* YCClimaCell.h */,
+				6ED1017C1A438DF8000FFEE6 /* YCClimaCell.m */,
+				6ED1017E1A438E6B000FFEE6 /* YCClimaCell.xib */,
 			);
 			path = YahooClima;
 			sourceTree = "<group>";
@@ -147,6 +171,8 @@
 				6E0A8E5D1A4210E9005CCCF7 /* YCQuery.m */,
 				6E1882451A4322E20047A9DB /* YCLocationHelper.h */,
 				6E1882461A4322E20047A9DB /* YCLocationHelper.m */,
+				6ED101761A436023000FFEE6 /* YCActivityProvider.h */,
+				6ED101771A436023000FFEE6 /* YCActivityProvider.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -200,7 +226,7 @@
 				TargetAttributes = {
 					6E0A8E2E1A41F2C4005CCCF7 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = S9YR72898A;
+						DevelopmentTeam = 6EAEARQ255;
 					};
 					6E0A8E4A1A41F2C4005CCCF7 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -234,6 +260,7 @@
 			files = (
 				6E0A8E411A41F2C4005CCCF7 /* Main.storyboard in Resources */,
 				6E0A8E461A41F2C4005CCCF7 /* LaunchScreen.xib in Resources */,
+				6ED1017F1A438E6B000FFEE6 /* YCClimaCell.xib in Resources */,
 				6E0A8E431A41F2C4005CCCF7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +279,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ED1017D1A438DF8000FFEE6 /* YCClimaCell.m in Sources */,
+				6ED101781A436023000FFEE6 /* YCActivityProvider.m in Sources */,
 				6E0A8E631A423CBA005CCCF7 /* Query.m in Sources */,
 				6E0A8E5E1A4210E9005CCCF7 /* YCQuery.m in Sources */,
 				6E1882471A4322E20047A9DB /* YCLocationHelper.m in Sources */,
@@ -259,6 +288,7 @@
 				6E0A8E351A41F2C4005CCCF7 /* main.m in Sources */,
 				6E0A8E3E1A41F2C4005CCCF7 /* ViewController.m in Sources */,
 				6E0A8E3B1A41F2C4005CCCF7 /* YahooClima.xcdatamodeld in Sources */,
+				6ED101751A434F85000FFEE6 /* YCMapVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

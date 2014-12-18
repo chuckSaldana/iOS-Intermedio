@@ -14,5 +14,6 @@
 @dynamic url;
 @dynamic text;
 @dynamic woeid;
+@dynamic city;
 
 @end
